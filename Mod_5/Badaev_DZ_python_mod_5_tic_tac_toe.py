@@ -1,11 +1,13 @@
 from random import choice
+from types import function
+from typing import List
 
 
-battle_field = list(range(1, 10))
-total = [0, 0]
+battle_field: List[int] = list(range(1, 10))
+total: List[int] = [0, 0]
 
 
-# start_game - функция отвечает за начало игры
+# start_game - функция начало игры
 def start_game() -> None:
     print(f'\n{"-" * 34} TIC_TAC_TOE {"-" * 33}')
     print('Бро, ты словил попадос на мега-супер игру - KRESTιKι N0LιKI\n')
@@ -18,35 +20,34 @@ def start_game() -> None:
     global player_1
     global player_2
 
-    player_1 = input('Введите имя игрока №1:\n'
+    player_1: str = input('Введите имя игрока №1:\n'
                  '--> ')
 
-    player_2 = input('Введите имя игрока №2:\n'
+    player_2: str = input('Введите имя игрока №2:\n'
                  '--> ')
 
     print(f'{"-"*80}')
 
 
-# giving_X0 - функция, функционал который отвечает за рандомное
-# присвоение игрокам Х и 0
+# giving_X0 - функция рандомно присваивает игрокам Х и 0
 def giving_X0(player_1: str, player_2: str) -> tuple:
     global chr_1
     global chr_2
-    chr_1 = choice('X0')
+    chr_1: str = choice('X0')
     print(f'{player_1}, тебе присвоен {chr_1}')
 
     if 'X' in chr_1:
-        chr_2 = '0'
+        chr_2: str = '0'
         print(f'{player_2}, а тебе присвоен {chr_2}')
 
     else:
-        chr_2 = 'X'
+        chr_2: str = 'X'
         print(f'{player_2}, а тебе присвоен {chr_2}')
 
     return chr_1, chr_2
 
 
-# show_battle_field - функция, которая показывает поле сражение
+# show_battle_field - функция показывает поле сражение
 def show_battle_field(field: list) -> None:
     print(f'{"-" * 80}')
     for i in range(3):
@@ -56,12 +57,13 @@ def show_battle_field(field: list) -> None:
     print()
 
 
-# data_handler - функция, которая обрабатывает данные на валидность
+# data_handler - функция обрабатывает данные на валидность и
+# заполняет клетку ходом игрока
 def data_handler(player: str, chr_: str) -> None:
     while True:
         try:
             print(f'{player}, выбери позицию для {chr_}')
-            choice = int(input('--> '))
+            choice: int = int(input('--> '))
 
         except:
             print('Это не число')
@@ -79,9 +81,9 @@ def data_handler(player: str, chr_: str) -> None:
             print('Бро, введи число от 1 до 9.')
 
 
-# check_win - функция, которая проверят, выиграл игрок или нет
+# check_win - функция проверят, выиграл игрок или нет
 def check_win(field: list) -> bool:
-    win_true = [
+    win_true: List[tuple[int, ...]] = [
         (0, 1, 2),
         (3, 4, 5),
         (6, 7, 8),
@@ -97,13 +99,14 @@ def check_win(field: list) -> bool:
     return False
 
 
-# end_game - функция, которая завершает или возобновляет игру
+# end_game - функция завершает или возобновляет игру
 def end_game() -> None:
     try:
         print(f'{"-" * 80}')
-        choice = int(input('Продолжить игру - 1\n'
+        choice: int = int(input('Продолжить игру - 1\n'
                            'Нет - 2\n--> '))
         print(f'{"-" * 80}')
+
         if choice == 1:
             global battle_field
             battle_field = list(range(1, 10))
@@ -113,13 +116,14 @@ def end_game() -> None:
             print(f'Окончательный счет - {total[0]}:{total[1]}\n'
                   f'{" " * 31} END GAME {" " * 31}')
         else:
+            print('Неверный ввод')
             end_game()
     except:
         print('Неверный ввод')
         end_game()
 
 
-# cnt_win - функция - счетчик
+# cnt_win - функция - счетчик счета выигрышей
 def cnt_win(player: str) -> None:
 
     if player == player_1:
@@ -134,7 +138,7 @@ def cnt_win(player: str) -> None:
 def game(field: list) -> None:
     giving_X0(player_1, player_2)
 
-    counter = 0
+    counter: int = 0
     while True:
 
         show_battle_field(field)
@@ -147,7 +151,7 @@ def game(field: list) -> None:
         counter += 1
 
         if counter > 4:
-            who_win = check_win(field)
+            who_win: function = check_win(field)
             if who_win:
                 if who_win == chr_1:
                     print(f'\n{player_1}, выиграл(а)!')
