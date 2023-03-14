@@ -1,5 +1,4 @@
 from random import choice
-from types import function
 from typing import List
 
 
@@ -151,7 +150,7 @@ def game(field: list) -> None:
         counter += 1
 
         if counter > 4:
-            who_win: function = check_win(field)
+            who_win = check_win(field)
             if who_win:
                 if who_win == chr_1:
                     print(f'\n{player_1}, выиграл(а)!')
