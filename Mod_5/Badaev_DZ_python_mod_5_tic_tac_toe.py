@@ -1,6 +1,11 @@
 from random import choice
 from typing import List
 
+player_1: str
+player_2: str
+
+chr_1: str
+chr_2: str
 
 battle_field: List[int] = list(range(1, 10))
 total: List[int] = [0, 0]
@@ -19,10 +24,10 @@ def start_game() -> None:
     global player_1
     global player_2
 
-    player_1: str = input('Введите имя игрока №1:\n'
+    player_1 = input('Введите имя игрока №1:\n'
                  '--> ')
 
-    player_2: str = input('Введите имя игрока №2:\n'
+    player_2 = input('Введите имя игрока №2:\n'
                  '--> ')
 
     print(f'{"-"*80}')
@@ -32,15 +37,16 @@ def start_game() -> None:
 def giving_X0(player_1: str, player_2: str) -> tuple:
     global chr_1
     global chr_2
-    chr_1: str = choice('X0')
+
+    chr_1 = choice('X0')
     print(f'{player_1}, тебе присвоен {chr_1}')
 
     if 'X' in chr_1:
-        chr_2: str = '0'
+        chr_2 = '0'
         print(f'{player_2}, а тебе присвоен {chr_2}')
 
     else:
-        chr_2: str = 'X'
+        chr_2 = 'X'
         print(f'{player_2}, а тебе присвоен {chr_2}')
 
     return chr_1, chr_2
