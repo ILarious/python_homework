@@ -56,7 +56,7 @@ from typing import Tuple, List, Set
 # tuples: List[Tuple[any, ...]] = [(), (), ('',), ('a', 'b'), (),
 #                     ('a', 'b', 'c'), (1,), (), (), ('d',), ('', ''), ()]
 #
-# non_empty_tuples: Tuple[any, ...] = tuple(filter(lambda tpl: len(tpl) > 0, tuples))
+# non_empty_tuples: List[any] = list(filter(lambda tpl: len(tpl) > 0, tuples))
 #
 # print(non_empty_tuples)
 
@@ -89,7 +89,7 @@ from typing import Tuple, List, Set
 
 # numbers: Tuple[Tuple[int, ...], ...] = ((10, 10, 10, 12), (30, 45, 56, 45),
 # (81, 80, 39, 32), (1, 2, 3, 4), (90, 10))
-# res: List[float, ...] = [sum(i)/2 for i in numbers]
+# res: List[float] = [sum(i)/len(i) for i in numbers]
 #
 # print(res)
 
@@ -146,7 +146,7 @@ from typing import Tuple, List, Set
 # set_1: Set[int] = set(num_1)
 # set_2: Set[int] = set(num_2)
 #
-# print(*(set_1 & set_2))
+# print(*sorted(set_1 & set_2))
 
 
 # /~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\========/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
