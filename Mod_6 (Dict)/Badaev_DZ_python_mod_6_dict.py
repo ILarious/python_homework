@@ -10,33 +10,33 @@ from typing import List, Dict
 # | Имена необходимо вывести на одной строке, разделяя символом пробела.      |
 # \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/========\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
 
-users: List[Dict[str, str]] = [
-    {'name': 'Todd', 'phone': '551-1414', 'email': 'todd@gmail.com'},
-    {'name': 'Helga', 'phone': '555-1618', 'email': 'helga@mail.net'},
-    {'name': 'Olivia', 'phone': '449-3141', 'email': ''},
-    {'name': 'LJ', 'phone': '555-2718', 'email': 'lj@gmail.net'},
-    {'name': 'Ruslan', 'phone': '422-145-9098', 'email': 'rus-lan.cha@yandex.ru'},
-    {'name': 'John', 'phone': '233-421-32', 'email': ''},
-    {'name': 'Lara', 'phone': '+7998-676-2532', 'email': 'g.lara89@gmail.com'},
-    {'name': 'Alina', 'phone': '+7948-799-2434', 'email': 'ali.ch.b@gmail.com'},
-    {'name': 'Robert', 'phone': '420-2011', 'email': ''},
-    {'name': 'Riyad', 'phone': '128-8890-128', 'email': 'r.mahrez@mail.net'},
-    {'name': 'Khabib', 'phone': '+7995-600-9080', 'email': 'kh.nurmag@gmail.com'},
-    {'name': 'Olga', 'phone': '6449-314-1213', 'email': ''},
-    {'name': 'Roman', 'phone': '+7459-145-8059', 'email': 'roma988@mail.ru'},
-    {'name': 'Maria', 'phone': '12-129-3148', 'email': 'm.sharapova@gmail.com'},
-    {'name': 'Fedor', 'phone': '+7445-341-0545', 'email': ''},
-    {'name': 'Tim', 'phone': '242-449-3141', 'email': 'timm.ggg@yandex.ru'}
-]
-
-# список dict-юзеров чей номер оканчивается на 8
-list_user: List[Dict[str, str]] = \
-    list(filter(lambda user: user['phone'].endswith('8'), users))
-
-# отсортированный список имен из списка list_user
-list_name_sort: List[str] = sorted([user['name'] for user in list_user])
-
-print(*list_name_sort)
+# users: List[Dict[str, str]] = [
+#     {'name': 'Todd', 'phone': '551-1414', 'email': 'todd@gmail.com'},
+#     {'name': 'Helga', 'phone': '555-1618', 'email': 'helga@mail.net'},
+#     {'name': 'Olivia', 'phone': '449-3141', 'email': ''},
+#     {'name': 'LJ', 'phone': '555-2718', 'email': 'lj@gmail.net'},
+#     {'name': 'Ruslan', 'phone': '422-145-9098', 'email': 'rus-lan.cha@yandex.ru'},
+#     {'name': 'John', 'phone': '233-421-32', 'email': ''},
+#     {'name': 'Lara', 'phone': '+7998-676-2532', 'email': 'g.lara89@gmail.com'},
+#     {'name': 'Alina', 'phone': '+7948-799-2434', 'email': 'ali.ch.b@gmail.com'},
+#     {'name': 'Robert', 'phone': '420-2011', 'email': ''},
+#     {'name': 'Riyad', 'phone': '128-8890-128', 'email': 'r.mahrez@mail.net'},
+#     {'name': 'Khabib', 'phone': '+7995-600-9080', 'email': 'kh.nurmag@gmail.com'},
+#     {'name': 'Olga', 'phone': '6449-314-1213', 'email': ''},
+#     {'name': 'Roman', 'phone': '+7459-145-8059', 'email': 'roma988@mail.ru'},
+#     {'name': 'Maria', 'phone': '12-129-3148', 'email': 'm.sharapova@gmail.com'},
+#     {'name': 'Fedor', 'phone': '+7445-341-0545', 'email': ''},
+#     {'name': 'Tim', 'phone': '242-449-3141', 'email': 'timm.ggg@yandex.ru'}
+# ]
+#
+# # список dict-юзеров чей номер оканчивается на 8
+# list_user: List[Dict[str, str]] = \
+#     list(filter(lambda user: user['phone'].endswith('8'), users))
+#
+# # отсортированный список имен из списка list_user
+# list_name_sort: List[str] = sorted([user['name'] for user in list_user])
+#
+# print(*list_name_sort)
 
 
 # /~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\========/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
@@ -45,27 +45,27 @@ print(*list_name_sort)
 # | заменяя все цифры в числе на слова:                                       |
 # \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/========\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
 
-try:
-    digits: Dict[str, str] = {
-        '0': 'zero',
-        '1': 'one',
-        '2': 'two',
-        '3': 'three',
-        '4': 'four',
-        '5': 'five',
-        '6': 'six',
-        '7': 'seven',
-        '8': 'eight',
-        '9': 'nine'
-    }
-    req: str = input('Прога ждет цифру --> ')
-    res: str = digits[req]
-
-    print(res)
-
-except KeyError as err:
-    print(f'Бро, нужно ввести цифру от 0 до 9, а не {err}.\n'
-          f'Попробуй, еще раз.')
+# try:
+#     digits: Dict[str, str] = {
+#         '0': 'zero',
+#         '1': 'one',
+#         '2': 'two',
+#         '3': 'three',
+#         '4': 'four',
+#         '5': 'five',
+#         '6': 'six',
+#         '7': 'seven',
+#         '8': 'eight',
+#         '9': 'nine'
+#     }
+#     req: str = input('Прога ждет цифру --> ')
+#     res: List[str] = [digits[key] for key in req]
+#
+#     print(*res)
+#
+# except KeyError as err:
+#     print(f'Бро, нужно ввести число, а не {err}.\n'
+#           f'Попробуй, еще раз.')
 
 
 # /~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\========/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
@@ -74,26 +74,26 @@ except KeyError as err:
 # | о данном курсе.                                                           |
 # \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/========\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
 
-try:
-    course: Dict[str, str] = {
-        'CS101': '3004, Хайнс, 8:00',
-        'CS102': '4501, Альварадо, 9:00',
-        'CS103': '6755, Рич, 10:00',
-        'NT110': '1244, Берк, 11:00',
-        'CM241': '1411, Ли, 13:00',
-        'PY210': '6, Димон, 19:00'
-    }
-
-    reg: str = input('Прога ждет номер курса.\n'
-                '--> ')
-    res: str = f'{reg}: {course[reg]}'
-
-    print(res)
-
-except KeyError as err:
-    print('Неправильно.\n'
-          'Попробуй, еще раз.\n'
-          f'{err} не найден среди курсов.')
+# try:
+#     course: Dict[str, str] = {
+#         'CS101': '3004, Хайнс, 8:00',
+#         'CS102': '4501, Альварадо, 9:00',
+#         'CS103': '6755, Рич, 10:00',
+#         'NT110': '1244, Берк, 11:00',
+#         'CM241': '1411, Ли, 13:00',
+#         'PY210': '6, Димон, 19:00'
+#     }
+#
+#     req: str = input('Прога ждет номер курса.\n'
+#                 '--> ')
+#     res: str = f'{req}: {course[req]}'
+#
+#     print(res)
+#
+# except KeyError as err:
+#     print('Неправильно.\n'
+#           'Попробуй, еще раз.\n'
+#           f'{err} не найден среди курсов.')
 
 
 # /~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\========/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\
@@ -116,8 +116,7 @@ morse: Dict[str, str] = {
     '6': '-....', '7': '--...', '8': '---..', '9': '----.'
 }
 
-text: str = input('Прога ждет текст.\n'
-             '--> ').upper()
+text: str = input('Прога ждет текст.\n--> ').upper()
 
 # List comprehension итерируется по символам строки `text` и проверяет, есть ли
 # ключ для каждого символа в словаре morse.
@@ -126,3 +125,9 @@ text: str = input('Прога ждет текст.\n'
 res: List[str] = [morse[key] for key in text if morse.get(key)]
 
 print(*res)
+
+# нужно дописать
+
+# text_morse: str = input('Прога ждет код морзе.\n--> ')
+#
+# res: List[str] = [morse.values(key) for key in text if morse.get(key)]
